@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <h2>Hola {{ userName }} desde Flask</h2>
+    <p> {{ course }} </p>
+    <p>template html</p>
+
+    {% if premium %}
+        <h3>Eres miembro premium</h3>
+    {% else %}
+        <h3>Curso gratis</h3>
+    {% endif %}
+
+    {% if courses %}
+        <ul>
+            {% for course in courses %}
+                <li>{{ course }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <img src="{{ url_for('static', filename='images/h.jpg') }}" alt="Imagen letra H">
+    {% endblock %}

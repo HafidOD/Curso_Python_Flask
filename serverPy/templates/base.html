@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>Main</title>
+</head>
+<body>
+    <!-- se define las rutas con el nombre de la funcion de la ruta -->
+    <a href="{{ url_for('index')}}">Index</a>
+    <a href="{{ url_for('about')}}">About</a>
+    <h1>Mensaje desde main</h1>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+        <div>
+            <p>pie de pagina</p>
+        </div>
+    {% endblock %}
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
